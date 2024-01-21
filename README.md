@@ -17,3 +17,8 @@ A portfolio page starter template for builders
 3. Set env vars
 4. Change the centralized personal information content file
 5. Deploy and set environment variables on Vercel
+
+## Technology Stack
+
+- Scaffold ETH-2
+- Alchemy
