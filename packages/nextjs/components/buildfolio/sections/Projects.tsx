@@ -42,10 +42,11 @@ const web2Projects: IProject[] = [
 
 export function Projects() {
   const [builds, setBuilds] = useState<IProject[]>([]);
-  const { data: profileData, error: profileError } = useSWR(
-    "https://buidlguidl-v3.ew.r.appspot.com/builders/0x41f727fA294E50400aC27317832A9F78659476B9",
-    fetcher,
-  );
+  const {
+    data: profileData,
+    error: profileError,
+    isLoading: profileDataIsLoading,
+  } = useSWR("https://buidlguidl-v3.ew.r.appspot.com/builders/0x41f727fA294E50400aC27317832A9F78659476B9", fetcher);
   const fetchBuildsData = useCallback(async (builds: any[]) => {
     const promises = builds.map(build => fetcher(`https://buidlguidl-v3.ew.r.appspot.com/builds/${build.id}`));
     return Promise.all(promises);
@@ -73,21 +74,25 @@ export function Projects() {
     }
   }, [profileData, fetchBuildsData]);
 
-  if (profileError) return <div>Failed to load</div>;
-  if (!profileData) return <div>Loading...</div>;
+  if (profileError) {
+    console.log(profileError);
+  }
+  // if (profileData) return <div>Loading...</div>;
   return (
     <SectionContainer>
       <SectionHeader title="Projects" />
 
-      <h5 className="font-inter font-bold text-4xl mb-5">Web3</h5>
+      <h5 className="font-cubano text-4xl mb-5">Decentralized</h5>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 mb-10">
-        {builds.map(project => (
-          <ProjectCard key={project.title} project={project} />
-        ))}
+        {profileDataIsLoading || profileError
+          ? Array.from(Array(3).keys()).map((_, idx) => (
+              <div key={idx} className="skeleton animate-pulse bg-base-100 rounded-xl w-full h-[500px]"></div>
+            ))
+          : builds.map(project => <ProjectCard key={project.title} project={project} />)}
       </div>
 
-      <h5 className="font-inter font-bold text-4xl mb-5">Web2</h5>
+      <h5 className="font-cubano text-4xl mb-5">Centralized</h5>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10">
         {web2Projects.map(project => (
