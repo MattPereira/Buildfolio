@@ -8,6 +8,7 @@ import { useDarkMode } from "~~/hooks/scaffold-eth/useDarkMode";
 export const SwitchTheme = ({ className }: { className?: string }) => {
   const { isDarkMode, toggle } = useDarkMode();
   const isMounted = useIsMounted();
+  console.log("isMounted", isMounted());
 
   useEffect(() => {
     const body = document.body;

@@ -1,9 +1,12 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { allowedImageDomains } = require("./utils/constants");
+
 // @ts-check
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["storage.googleapis.com", "ipfs.io"],
+    domains: allowedImageDomains,
   },
   reactStrictMode: true,
   typescript: {
