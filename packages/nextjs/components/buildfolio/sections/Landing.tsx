@@ -1,13 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { socials } from "../Socials";
 import { createEnsPublicClient } from "@ensdomains/ensjs";
 import { getAddressRecord, getTextRecord } from "@ensdomains/ensjs/public";
 import { http } from "viem";
 import { mainnet } from "viem/chains";
 import { SmartImage } from "~~/components/buildfolio/SmartImage";
 import { useFetchImageSrc } from "~~/hooks/buildfolio/useFetchImageSrc";
+import GithubIcon from "~~/public/socials/github.svg";
+import TelegramIcon from "~~/public/socials/telegram.svg";
+import TwitterIcon from "~~/public/socials/twitter.svg";
+
+const ensName = "matthu.eth";
 
 /**
  *
@@ -25,14 +29,14 @@ export function Landing() {
       try {
         const [ethAddress, twitterUsername, githubUsername, telegramUsername, title, name, description, avatar] =
           await client.ensBatch(
-            getAddressRecord.batch({ name: "matthu.eth" }),
-            getTextRecord.batch({ name: "matthu.eth", key: "com.twitter" }),
-            getTextRecord.batch({ name: "matthu.eth", key: "com.github" }),
-            getTextRecord.batch({ name: "matthu.eth", key: "org.telegram" }),
-            getTextRecord.batch({ name: "matthu.eth", key: "title" }),
-            getTextRecord.batch({ name: "matthu.eth", key: "name" }),
-            getTextRecord.batch({ name: "matthu.eth", key: "description" }),
-            getTextRecord.batch({ name: "matthu.eth", key: "avatar" }),
+            getAddressRecord.batch({ name: "ensName" }),
+            getTextRecord.batch({ name: ensName, key: "com.twitter" }),
+            getTextRecord.batch({ name: ensName, key: "com.github" }),
+            getTextRecord.batch({ name: ensName, key: "org.telegram" }),
+            getTextRecord.batch({ name: ensName, key: "title" }),
+            getTextRecord.batch({ name: ensName, key: "name" }),
+            getTextRecord.batch({ name: ensName, key: "description" }),
+            getTextRecord.batch({ name: ensName, key: "avatar" }),
           );
         const records = {
           ethAddress,
@@ -73,17 +77,31 @@ export function Landing() {
                 {records?.title}
               </h2>
               <div className="flex justify-center lg:justify-start">
-                {socials.map(({ url, icon, id }) => (
-                  <a
-                    key={id}
-                    href={url}
-                    className="inline-block p-2 mr-3 rounded-full text-base-300 bg-primary hover:bg-accent"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {icon}
-                  </a>
-                ))}
+                <a
+                  href={`https://twitter.com/${records?.twitterUsername}`}
+                  className="inline-block p-2 mr-3 rounded-full text-base-300 bg-primary hover:bg-accent"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <TwitterIcon width={35} height={35} alt="twitter icon" />
+                </a>
+                <a
+                  href={`https://t.me//${records?.telegramUsername}`}
+                  className="inline-block p-2 mr-3 rounded-full text-base-300 bg-primary hover:bg-accent"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <TelegramIcon width={35} height={35} alt="twitter icon" />
+                </a>
+
+                <a
+                  href={`https://github.com/${records?.githubUsername}`}
+                  className="inline-block p-2 mr-3 rounded-full text-base-300 bg-primary hover:bg-accent"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <GithubIcon width={35} height={35} alt="twitter icon" />
+                </a>
               </div>
             </div>
           </>

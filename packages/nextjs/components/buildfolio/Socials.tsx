@@ -1,6 +1,6 @@
-import GithubIcon from "~~/public/github.svg";
-import LinkedInIcon from "~~/public/linkedin.svg";
-import TwitterIcon from "~~/public/twitter.svg";
+import GithubIcon from "~~/public/socials/github.svg";
+import LinkedInIcon from "~~/public/socials/linkedin.svg";
+import TwitterIcon from "~~/public/socials/twitter.svg";
 
 export const socials = [
   {
