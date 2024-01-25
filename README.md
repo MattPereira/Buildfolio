@@ -1,25 +1,51 @@
 # Buildfolio
 
-A portfolio page starter template for builders
+![Buildfolio Thumbnail](https://matt-pereira.vercel.app/readme/showcase.png)
+
+A portfolio page starter template that make it easy for builders to deploy their own site.
 
 ## Features
 
-- Centralized control of content within a single file
-- Display of all projects submitted to BuidlGuidl app
-- Display of targeted projects via Github API call ( using repo id? )
-- Display of acheivement NFTs ( grouped by contract ? )
-- Display of POAPs
-- Display gitcoin passport
+- Landing showcase data pulled from ENS records with ensjs
+- Display all projects submitted to the BuidlGuidl app
+- Display additional projects added to buildfolio.config file
+- Display of acheivement NFTs grouped by contract
 
 ## Getting Started
 
 1. Clone repo
+
+```
+git clone https://github.com/MattPereira/Buildfolio.git
+```
+
 2. Install dependencies
-3. Set env vars
-4. Change the centralized personal information content file
-5. Deploy and set environment variables on Vercel
+
+```
+   yarn install
+```
+
+3. Set env vars as instructed by `packages/nextjs/.env.example`
+4. Edit the `packages/nextjs/buildfolio.config.js` file with your own personal information
+   1. `ensName` is used to fetch ens records that are used for content of the `Landing` component
+   2. `buidlGuidlWalletAddress` is used to send request to BuidlGuidl server that responds with all published builds
+   3. `achievementNftsInfo` is used to send request to alchemy nft API endpoint that retrieves collection data
+5. Deploy to Vercel
+
+```
+yarn vercel
+```
+
+6. Set environment variables on vercel
+   1. Set the `NEXT_PUBLIC_VERCEL_URL` key to a value that looks like `matt-pereira.vercel.app`
+   2. Set the `ALCHEMY_API_KEY` key to your alchemy api key
 
 ## Technology Stack
 
 - Scaffold ETH-2
 - Alchemy
+
+## Todo
+
+- Display of POAPs
+- Display gitcoin passport
