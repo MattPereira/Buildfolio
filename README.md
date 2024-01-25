@@ -1,4 +1,4 @@
-# Buildfolio
+# [Buildfolio](https://matt-pereira.vercel.app)
 
 ![Buildfolio Thumbnail](https://matt-pereira.vercel.app/readme/showcase.png)
 
@@ -7,9 +7,9 @@ A portfolio page starter template that make it quick and easy for builders to de
 ## Features
 
 - Landing showcase data pulled from ENS records with ensjs
-- Display all projects submitted to the BuidlGuidl app by providing wallet address
+- Display all projects submitted to the BuidlGuidl app just by providing wallet address
 - Display additional projects by editing the buildfolio.config file
-- Flex your achievement NFTs grouped by contract
+- Flex your achievement NFTs grouped by contract just by providing the owner wallet addresses and NFT contract addresses
 
 ## Getting Started
 
