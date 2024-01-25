@@ -15,7 +15,9 @@ export function About() {
             development. I also joined <Link href="https://www.hackforla.org/" text="Hack for LA" /> as a volunteer
             software engineer contributing to open source projects including{" "}
             <Link text="Civic Tech Jobs" href="https://www.hackforla.org/projects/civic-tech-jobs" />, where I learned
-            to collaborate with other developers, designers, and project managers.
+            to collaborate with other developers, designers, and project managers. Additionally, I built the{" "}
+            <Link text="Tabernacle School" href="https://www.tabernacle.school/" /> and{" "}
+            <Link text="Contra Costa Golf Club" href="https://www.ccgc.app/" /> websites
           </p>
         </div>
         <div className="flex-1 mb-5">
@@ -26,9 +28,9 @@ export function About() {
             <Link text="Speedrun Chainlink" href="https://speedrun-chainlink.vercel.app/" />, a beginner&apos;s guide to
             implimenting Chainlink products with smart contracts. Next, I shipped{" "}
             <Link text="Vaults of Fortune" href="https://vaults-of-fortune.vercel.app/" />, a contest where players
-            compete for the highest ROI by depositing ERC-20 tokens into ERC-4626 vaults. Furthermore, I was part of a
-            hackathon team that built <Link text="upDev" href="https://updev-v1.vercel.app/" />, a universal profile for
-            developers built with LUKSO.
+            compete for the highest ROI by depositing ERC-20 tokens into ERC-4626 vaults. After that, I shipped{" "}
+            <Link text="Only Buidlors" href="https://only-buidlors.vercel.app/" />, a dynamic SVG NFT project that uses
+            Chainlink functions to verify membership before minting.
           </p>
         </div>
         <div className="flex-1 mb-5">
@@ -36,14 +38,11 @@ export function About() {
           <p>
             I am very fortunate that my efforts continue to be rewarded with a stream from BuidlGuidl&apos;s{" "}
             <Link text="Sanctum Cohort" href="https://sanctum.buidlguidl.com/" />. I plan to continue competing in
-            hackathons and am very excited to attend my first ETH Denver this year! Additionally, I am working on the
-            offical{" "}
-            <Link
-              href="https://github.com/scaffold-eth/Scaffold-ETH-DeFi-Challenges"
-              text="Scaffold Eth Defi Challenges"
-            />{" "}
-            where we are creating tutorials to help devs learn how to build adaptors that connect ERC-4626 vaults with
-            the larger Defi ecosystem.
+            hackathons and am very excited to attend my first ETH Denver this year! Additionally, I am helping to create{" "}
+            <Link href="https://github.com/scaffold-eth/Scaffold-ETH-DeFi-Challenges" text="Defi Challenges" /> that
+            help devs learn how to work with live protocols. Finally, I am starting to explore regenerative finance and
+            learn about how protocols like gitcoin grants and quadratic funding help facilatate the innovation and
+            growth of public goods.
           </p>
         </div>
       </div>
