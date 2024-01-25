@@ -7,9 +7,9 @@ A portfolio page starter template that make it quick and easy for builders to de
 ## Features
 
 - Landing showcase data pulled from ENS records with ensjs
-- Display all projects submitted to the BuidlGuidl app
-- Display additional projects added to buildfolio.config file
-- Display of acheivement NFTs grouped by contract
+- Display all projects submitted to the BuidlGuidl app by providing wallet address
+- Display additional projects by editing the buildfolio.config file
+- Flex your achievement NFTs grouped by contract
 
 ## Getting Started
 
@@ -43,5 +43,5 @@ yarn vercel
 ## Technology Stack
 
 - Scaffold ETH-2
-- Alchemy
+- Alchemy NFT API
 - ENSjs
