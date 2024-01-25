@@ -9,6 +9,7 @@ A portfolio page starter template for builders
 - Display of targeted projects via Github API call ( using repo id? )
 - Display of acheivement NFTs ( grouped by contract ? )
 - Display of POAPs
+- Display gitcoin passport
 
 ## Getting Started
 

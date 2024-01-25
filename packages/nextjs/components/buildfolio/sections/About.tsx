@@ -1,12 +1,18 @@
-import { Link, SectionContainer, SectionHeader } from "~~/components/buildfolio";
+import { aboutItems } from "~~/buildfolio.config";
+import { SectionContainer, SectionHeader } from "~~/components/buildfolio";
 
 export function About() {
   return (
     <SectionContainer>
       <SectionHeader title="About" />
-
-      <div className="flex flex-col lg:flex-row justify-center lg:space-x-8 font-gothic text-xl">
-        <div className="flex-1 mb-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 font-gothic text-xl">
+        {aboutItems.map(item => (
+          <div key={item.title} className="flex-1 mb-5">
+            <h5 className="text-3xl font-inter font-bold mb-2">{item.title}</h5>
+            <p>{item.description}</p>
+          </div>
+        ))}
+        {/* <div className="flex-1 mb-5">
           <h5 className="text-3xl font-inter font-bold mb-2">Past</h5>
           <p>
             My journey as a programmer started with a full stack software engineering bootcamp organized by{" "}
@@ -44,7 +50,7 @@ export function About() {
             learn about how protocols like gitcoin grants and quadratic funding help facilatate the innovation and
             growth of public goods.
           </p>
-        </div>
+        </div> */}
       </div>
     </SectionContainer>
   );
