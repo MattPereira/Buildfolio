@@ -2,6 +2,7 @@ module.exports = {
   /*** "Landing" section content ***/
   ensName: "matthu.eth", // ENS records fetched for the landing showcase component
   allowedImageDomains: ["storage.googleapis.com", "ipfs.io", "prod-metadata.s3.amazonaws.com"], // Nextjs Image component requires a domain whitelist
+  resumeUrl: "https://docs.google.com/document/d/1H-5nsbQjDQPvQYtGq6Y91_NAwTxjicJEVXbtxtorsKI/edit?usp=sharing", // for link in the header component
   /*** "Achievements" section content */
   achievementNftsInfo: [
     {

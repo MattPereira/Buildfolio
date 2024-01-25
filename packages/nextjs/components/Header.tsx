@@ -1,6 +1,7 @@
 // "use client";
 import React from "react";
 import Link from "next/link";
+import { resumeUrl } from "~~/buildfolio.config";
 // import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { SwitchTheme } from "~~/components/SwitchTheme";
 import MpLogo from "~~/public/logo.svg";
@@ -17,7 +18,7 @@ export const menuLinks: HeaderMenuLink[] = [
   { label: "Achievements", href: "/#Achievements" },
   {
     label: "Resume",
-    href: "https://docs.google.com/document/d/1H-5nsbQjDQPvQYtGq6Y91_NAwTxjicJEVXbtxtorsKI/edit?usp=sharing",
+    href: resumeUrl,
   },
 ];
 
