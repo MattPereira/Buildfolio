@@ -1,10 +1,48 @@
 module.exports = {
   /*** "Landing" section content ***/
   ensName: "matthu.eth", // ENS records fetched for the landing showcase component
-
   allowedImageDomains: ["storage.googleapis.com", "ipfs.io", "prod-metadata.s3.amazonaws.com"], // Nextjs Image component requires a domain whitelist
+  /*** "Achievements" section content */
+  achievementNftsInfo: [
+    {
+      title: "Patrick Collin's Foundry Course",
+      ownerWalletAddress: "0x41f727fA294E50400aC27317832A9F78659476B9",
+      collectionContractAddress: ["0x39338138414Df90EC67dC2EE046ab78BcD4F56D9"],
+    },
+    {
+      title: "Patrick Collin's Hardhat Course",
+      ownerWalletAddress: "0x41f727fA294E50400aC27317832A9F78659476B9",
+      collectionContractAddress: [
+        "0xB29eA9ad260B6DC980513bbA29051570b2115110",
+        "0xaAcb0B62aEB7Db938f12161Da0E45fC3B2B34179",
+        "0xA457A0F9b6EDbEc66941D7Ed1D4d4834330ABf52",
+      ],
+    },
+  ],
   /*** "Projects" section content ***/
-  buidlGuidlWallet: "0x41f727fA294E50400aC27317832A9F78659476B9", // BG profile wallet address
+  buidlGuidlWalletAddress: "0x41f727fA294E50400aC27317832A9F78659476B9", // BG profile wallet address
+  web2ProjectsData: [
+    {
+      title: "Contra Costa Golf Club",
+      imageSrc: "/ccgc.png",
+      description:
+        "A full stack web application that manages all of the tournaments, greenies, members, courses, and standings data for the contra costa golf club. Users are able to input their strokes, putts, and greenies as they play each round. Handicaps and points are automatically calculated to determine individual tournament and season long champions.",
+      urls: {
+        demo: "https://ccgc.vercel.app/",
+        code: "https://github.com/MattPereira/contra-costa-golf-club",
+      },
+    },
+    {
+      title: "Tabernacle School",
+      description:
+        "A single page web application for Tabernacle School that advertises to prospective families and provides current families with requisite documents, calendars, and instructions. Features include forms that allow users to send emails to the school, a FullCalender that fetches data from the school’s google calendar, and a headless CMS for updating the data and photos displayed on the website.",
+      imageSrc: "/tabernacle.png",
+      urls: {
+        demo: "https://tabernacle.school",
+        code: "https://github.com/MattPereira/tabernacle-school",
+      },
+    },
+  ],
   /*** "About" section content ***/
   aboutItems: [
     {

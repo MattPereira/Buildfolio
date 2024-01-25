@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import useSWR from "swr";
-import { SectionContainer, SectionHeader } from "~~/components/buildfolio";
+import { buidlGuidlWalletAddress, web2ProjectsData } from "~~/buildfolio.config";
+import { SectionContainer, SectionHeader } from "~~/components/buildfolio/common";
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
@@ -17,36 +18,15 @@ interface IProject {
   };
 }
 
-const web2Projects: IProject[] = [
-  {
-    title: "Contra Costa Golf Club",
-    imageSrc: "/ccgc.png",
-    description:
-      "A full stack web application that manages all of the tournaments, greenies, members, courses, and standings data for the contra costa golf club. Users are able to input their strokes, putts, and greenies as they play each round. Handicaps and points are automatically calculated to determine individual tournament and season long champions.",
-    urls: {
-      demo: "https://ccgc.vercel.app/",
-      code: "https://github.com/MattPereira/contra-costa-golf-club",
-    },
-  },
-  {
-    title: "Tabernacle School",
-    description:
-      "A single page web application for Tabernacle School that advertises to prospective families and provides current families with requisite documents, calendars, and instructions. Features include forms that allow users to send emails to the school, a FullCalender that fetches data from the school’s google calendar, and a headless CMS for updating the data and photos displayed on the website.",
-    imageSrc: "/tabernacle.png",
-    urls: {
-      demo: "https://tabernacle.school",
-      code: "https://github.com/MattPereira/tabernacle-school",
-    },
-  },
-];
-
 export function Projects() {
   const [builds, setBuilds] = useState<IProject[]>([]);
+
   const {
     data: profileData,
     error: profileError,
     isLoading: profileDataIsLoading,
-  } = useSWR("https://buidlguidl-v3.ew.r.appspot.com/builders/0x41f727fA294E50400aC27317832A9F78659476B9", fetcher);
+  } = useSWR(`https://buidlguidl-v3.ew.r.appspot.com/builders/${buidlGuidlWalletAddress}`, fetcher);
+
   const fetchBuildsData = useCallback(async (builds: any[]) => {
     const promises = builds.map(build => fetcher(`https://buidlguidl-v3.ew.r.appspot.com/builds/${build.id}`));
     return Promise.all(promises);
@@ -77,7 +57,6 @@ export function Projects() {
   if (profileError) {
     console.log(profileError);
   }
-  // if (profileData) return <div>Loading...</div>;
   return (
     <SectionContainer>
       <SectionHeader title="Projects" />
@@ -86,16 +65,14 @@ export function Projects() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 mb-10">
         {profileDataIsLoading || profileError
-          ? Array.from(Array(3).keys()).map((_, idx) => (
-              <div key={idx} className="skeleton animate-pulse bg-base-100 rounded-xl w-full h-[500px]"></div>
-            ))
+          ? projectCardSkeletons
           : builds.map(project => <ProjectCard key={project.title} project={project} />)}
       </div>
 
       <h5 className="font-cubano text-4xl mb-5">Centralized</h5>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10">
-        {web2Projects.map(project => (
+        {web2ProjectsData.map(project => (
           <ProjectCard key={project.title} project={project} />
         ))}
       </div>
@@ -123,7 +100,7 @@ function ProjectCard({ project }: { project: IProject }) {
             href={project.urls.demo}
             target="_blank"
             rel="noreferrer"
-            className={`btn btn-primary btn-outline  w-full text-xl font-inter font-bold capitalize rounded-lg`}
+            className={`btn btn-accent btn-outline w-full text-xl font-inter font-bold capitalize rounded-lg`}
           >
             Demo
           </a>
@@ -140,3 +117,7 @@ function ProjectCard({ project }: { project: IProject }) {
     </div>
   );
 }
+
+const projectCardSkeletons = Array.from(Array(3).keys()).map((_, idx) => (
+  <div key={idx} className="skeleton animate-pulse bg-base-100 rounded-xl w-full h-[500px]"></div>
+));

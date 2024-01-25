@@ -1,22 +1,27 @@
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
+import axios from "axios";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
-    const address = "0x41f727fA294E50400aC27317832A9F78659476B9";
-    // Base URL
-    const url = `https://arb-mainnet.g.alchemy.com/nft/v3/${process.env.ALCHEMY_API_KEY}/getNFTsForOwner?owner=${address}&withMetadata=true`;
+    const searchParams = request.nextUrl.searchParams;
+    const ownerAddress = searchParams.get("owner");
+    // .getAll method grabs all query params with key of "collection" !!! :)
+    const collectionAddress = searchParams.getAll("collection");
 
-    // Fetch data
-    const response = await fetch(url);
+    const response = await axios.get(
+      `https://arb-mainnet.g.alchemy.com/nft/v3/${process.env.ALCHEMY_API_KEY}/getNFTsForOwner`,
+      {
+        params: {
+          owner: ownerAddress,
+          "contractAddresses[]": collectionAddress,
+          withMetadata: true,
+          pageSize: 100,
+        },
+      },
+    );
 
-    // Check if the response was successful
-    if (!response.ok) {
-      throw new Error(`API responded with status code ${response.status}`);
-    }
-
-    const data = await response.json();
+    const data = await response.data;
     const nfts = data.ownedNfts;
-
     return NextResponse.json({ nfts }, { status: 200 });
   } catch (error) {
     // Log the error for server-side debugging

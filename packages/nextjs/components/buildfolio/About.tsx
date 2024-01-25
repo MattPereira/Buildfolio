@@ -1,5 +1,5 @@
 import { aboutItems } from "~~/buildfolio.config";
-import { SectionContainer, SectionHeader } from "~~/components/buildfolio";
+import { SectionContainer, SectionHeader } from "~~/components/buildfolio/common";
 
 export function About() {
   return (

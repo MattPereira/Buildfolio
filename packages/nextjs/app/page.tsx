@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { About, Achievements, Experience, Landing, Projects } from "~~/components/buildfolio/sections";
+import { About, Achievements, Experience, Landing, Projects } from "~~/components/buildfolio/";
 
 // export const getServerSideProps = async () => {
 //   const nftResponse = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/get-nfts`);

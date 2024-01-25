@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { experienceItems } from "~~/buildfolio.config";
-import { SectionContainer, SectionHeader } from "~~/components/buildfolio";
+import { SectionContainer, SectionHeader } from "~~/components/buildfolio/common";
 
 export function Experience() {
   return (

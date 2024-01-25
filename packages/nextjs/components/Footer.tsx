@@ -1,7 +1,7 @@
 "use client";
 
 // import { socials } from "~~/components/buildfolio";
-import { SocialLinks } from "~~/components/buildfolio/SocialLinks";
+import { SocialLinks } from "~~/components/buildfolio/common";
 
 export function Footer() {
   return (

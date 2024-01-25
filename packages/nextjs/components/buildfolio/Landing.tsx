@@ -1,8 +1,7 @@
 "use client";
 
 import { ensName } from "~~/buildfolio.config";
-import { SmartImage } from "~~/components/buildfolio/SmartImage";
-import { SocialLinks } from "~~/components/buildfolio/SocialLinks";
+import { SmartImage, SocialLinks } from "~~/components/buildfolio/common";
 import { useFetchImageUrl } from "~~/hooks/buildfolio/useFetchImageUrl";
 import { useGlobalState } from "~~/services/store/store";
 
@@ -15,7 +14,7 @@ export function Landing() {
   return (
     <section id="landing" className="py-36 xl:py-60">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
-        {!ensRecords ? (
+        {Object.keys(ensRecords).length === 0 ? (
           <>
             {imageSkeleton}
             {ensDetailsSkeleton}
