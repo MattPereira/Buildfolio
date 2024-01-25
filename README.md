@@ -2,7 +2,7 @@
 
 ![Buildfolio Thumbnail](https://matt-pereira.vercel.app/readme/showcase.png)
 
-A portfolio page starter template that make it easy for builders to deploy their own site.
+A portfolio page starter template that make it quick and easy for builders to deploy their own showcase. See the example demo at https://matt-pereira.vercel.app/
 
 ## Features
 
@@ -44,8 +44,4 @@ yarn vercel
 
 - Scaffold ETH-2
 - Alchemy
-
-## Todo
-
-- Display of POAPs
-- Display gitcoin passport
+- ENSjs
