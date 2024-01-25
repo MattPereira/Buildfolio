@@ -1,60 +1,24 @@
 import { useEffect, useState } from "react";
-import { createPublicClient, http } from "viem";
+import { createPublicClient, http, parseAbi } from "viem";
 import { mainnet } from "viem/chains";
 
-const ERC721_ABI = [
-  {
-    constant: true,
-    inputs: [
-      {
-        name: "tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "tokenURI",
-    outputs: [
-      {
-        name: "",
-        type: "string",
-      },
-    ],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-];
+const ERC721_ABI = parseAbi(["function tokenURI(uint256 tokenId) external view returns (string)"]);
+const ERC1155_ABI = parseAbi(["function uri(uint256 _id) external view returns (string)"]);
 
-const ERC1155_ABI = [
-  {
-    constant: true, // This can be omitted in favor of "stateMutability"
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_id",
-        type: "uint256",
-      },
-    ],
-    name: "uri",
-    outputs: [
-      {
-        internalType: "string",
-        name: "",
-        type: "string",
-      },
-    ],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-];
-
-interface UseFetchImageSrcReturn {
+interface IuseFetchImageUrl {
   imageUrl: string; // Ensuring imageUrl is always a string
   isLoading: boolean;
   isError: boolean;
 }
 
-export function useFetchImageSrc(ensRecord: string | null): UseFetchImageSrcReturn {
+/**
+ * @param ensAvatarRecord looks different depending on how user set their ens avatar record
+ * for direct image upload... https://euc.li/woogity.eth
+ * for erc721... "eip155:1/erc721:0x1e988ba4692e52bc50b375bcc8585b95c48aad77/8941"
+ * for erc1155... "eip155:1/erc1155:0x495f947276749ce646f68ac8c248420045cb7b5e/70259757321654187579724657227123643114717020056989902699269827354508241403905"
+ * @returns imageUrl, isLoading, isError
+ */
+export function useFetchImageUrl(ensAvatarRecord: string | null): IuseFetchImageUrl {
   const [imageUrl, setImageUrl] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
@@ -67,19 +31,19 @@ export function useFetchImageSrc(ensRecord: string | null): UseFetchImageSrcRetu
 
     async function fetchImageUrl() {
       setIsLoading(true); // Start loading
-      if (!ensRecord) {
+      if (!ensAvatarRecord) {
         setIsLoading(false);
         return;
       }
 
       // Check if the ENS record is a direct URL (i.e. instead of nft its a direct image upload to ens)
-      if (ensRecord.startsWith("http://") || ensRecord.startsWith("https://")) {
-        setImageUrl(ensRecord);
+      if (ensAvatarRecord.startsWith("http://") || ensAvatarRecord.startsWith("https://")) {
+        setImageUrl(ensAvatarRecord);
         setIsLoading(false);
         return;
       }
 
-      const parts = ensRecord.split(/[:/]+/);
+      const parts = ensAvatarRecord.split(/[:/]+/);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const [eip, chainId, tokenStandard, contractAddress, tokenId] = parts;
 
@@ -92,14 +56,14 @@ export function useFetchImageSrc(ensRecord: string | null): UseFetchImageSrcRetu
             address: contractAddress,
             abi: ERC721_ABI,
             functionName: "tokenURI",
-            args: [tokenId],
+            args: [BigInt(tokenId)],
           });
         } else if (tokenStandard === "erc1155") {
           tokenURI = await client.readContract({
             address: contractAddress,
             abi: ERC1155_ABI,
             functionName: "uri",
-            args: [tokenId],
+            args: [BigInt(tokenId)],
           });
           // Some ERC-1155 contracts might require replacing {id} in the URI with the token ID
           tokenURI = tokenURI.replace("{id}", tokenId);
@@ -135,7 +99,7 @@ export function useFetchImageSrc(ensRecord: string | null): UseFetchImageSrcRetu
     }
 
     fetchImageUrl();
-  }, [ensRecord]);
+  }, [ensAvatarRecord]);
 
   return { imageUrl, isLoading, isError };
 }

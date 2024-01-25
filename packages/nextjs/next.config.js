@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { allowedImageDomains } = require("./utils/constants");
+const { allowedImageDomains } = require("./buildfolio.config");
 
 // @ts-check
 
