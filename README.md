@@ -2,7 +2,9 @@
 
 ![Buildfolio Thumbnail](https://matt-pereira.vercel.app/thumbnail.jpg)
 
-A portfolio page starter template that make it quick and easy for builders to deploy their own showcase. See the example demo at https://matt-pereira.vercel.app/
+A portfolio page starter template for web3 developers. The idea is to make it easy for builders to change a few lines of code in a configuration file and then deploy their web3 own portfolio site that they can share with employers or in hackathon group chats when looking to form teams.
+
+See the example demo at https://matt-pereira.vercel.app/
 
 ## Features
 
