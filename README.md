@@ -8,10 +8,28 @@ See the example demo at https://matt-pereira.vercel.app/
 
 ## Features
 
-- Landing showcase data pulled from ENS records with ensjs
-- Display all projects submitted to the BuidlGuidl app just by providing wallet address
-- Display additional projects by editing the buildfolio.config file
-- Flex your achievement NFTs grouped by contract just by providing the owner wallet addresses and NFT contract addresses
+All content on the page is controlled by the `packages/nextjs/buildfolio.config.js` file
+
+### Landing
+
+- `ensName` is used to fetch ens records that are used for content of the `Landing` component
+
+### About
+
+- `aboutItems` is where you can edit your about section paragraphs
+
+### Projects
+
+- `buidlGuidlWalletAddress` is used to fetch data for your builds published on the BuidlGuidl app
+- `web2ProjectsData` is used to display any other projects you want
+
+### Experience
+
+- `experienceItems` array controls the content displayed in this section
+
+### Acheivements
+
+- `achievementNftsInfo` is used to fetch all NFTs for a given NFT collection address and owner wallet address using the Alchemy NFT API
 
 ## Getting Started
 
@@ -28,10 +46,7 @@ git clone https://github.com/MattPereira/Buildfolio.git
 ```
 
 3. Set env vars as instructed by `packages/nextjs/.env.example`
-4. Edit the `packages/nextjs/buildfolio.config.js` file with your own personal information
-   1. `ensName` is used to fetch ens records that are used for content of the `Landing` component
-   2. `buidlGuidlWalletAddress` is used to send request to BuidlGuidl server that responds with all published builds
-   3. `achievementNftsInfo` is used to send request to alchemy nft API endpoint that retrieves collection data
+4. Edit the `packages/nextjs/buildfolio.config.js` file with your own information
 5. Deploy to Vercel
 
 ```
