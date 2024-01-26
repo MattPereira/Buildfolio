@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     default: "Buildfolio",
     template: "%s | Scaffold-ETH 2",
   },
-  description: "Portfolio page template for BuidlGuidl members",
+  description: "My full stack web developer portfolio page",
   openGraph: {
     title: {
       default: "Buildfolio",
       template: "%s | Scaffold-ETH 2",
     },
-    description: "Portfolio page template for BuidlGuidl members",
+    description: "My full stack web developer portfolio page",
     images: [
       {
         url: imageUrl,
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: [imageUrl],
     title: {
-      default: "Scaffold-ETH 2",
+      default: "Buildfolio",
       template: "%s | Scaffold-ETH 2",
     },
-    description: "Portfolio page template for BuidlGuidl members",
+    description: "My full stack web developer portfolio page",
   },
   icons: {
     icon: [{ url: "/favicon.png", sizes: "32x32", type: "image/png" }],

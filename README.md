@@ -1,6 +1,6 @@
 # [Buildfolio](https://matt-pereira.vercel.app)
 
-![Buildfolio Thumbnail](https://matt-pereira.vercel.app/readme/showcase.png)
+![Buildfolio Thumbnail](https://matt-pereira.vercel.app/thumbnail.jpg)
 
 A portfolio page starter template that make it quick and easy for builders to deploy their own showcase. See the example demo at https://matt-pereira.vercel.app/
 
