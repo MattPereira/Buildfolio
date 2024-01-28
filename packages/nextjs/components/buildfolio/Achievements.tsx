@@ -28,8 +28,6 @@ const PoapsDataFetcher = () => {
   const fetchPoapsUrl = `/api/get-poaps?owner=${poapsWalletAddress}`;
   const { data: poaps, error: poapsError, isLoading: poapsIsLoading } = useSWR(fetchPoapsUrl, fetcher);
 
-  console.log("poaps", poaps);
-
   const nfts = poaps
     ? poaps.data
         .map((nft: any) => ({
@@ -92,7 +90,7 @@ const CollectionDisplay = ({
       {isLoading || error ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
           {Array.from(Array(4).keys()).map((_, idx) => (
-            <div key={idx} className="skeleton animate-pulse bg-base-100 rounded-xl w-full h-72"></div>
+            <div key={idx} className="skeleton animate-pulse bg-base-100 rounded-xl w-full h-60"></div>
           ))}
         </div>
       ) : (
