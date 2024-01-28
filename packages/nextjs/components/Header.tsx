@@ -43,12 +43,12 @@ export const Header = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-primary text-primary-content rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-5 shadow bg-primary text-primary-content rounded-box w-72"
           >
             {menuLinks.map(({ label, href }) => {
               return (
-                <li key={href}>
-                  <Link href={href} passHref className={`font-cubano text-2xl hover:text-accent`}>
+                <li key={href} className="border-b border-base-300 py-3">
+                  <Link href={href} passHref className={`font-cubano text-3xl hover:text-accent`}>
                     {label}
                   </Link>
                 </li>
@@ -61,14 +61,14 @@ export const Header = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="flex gap-6 py-4">
+        <ul className="flex gap-8 py-4">
           {menuLinks.map(({ label, href }) => {
             return (
               <li key={href}>
                 <Link
                   href={href}
                   passHref
-                  className={`font-cubano text-2xl hover:text-accent rounded-md hover:bg-base-300`}
+                  className={`font-cubano text-3xl hover:text-accent rounded-md hover:bg-base-300`}
                 >
                   {label}
                 </Link>
