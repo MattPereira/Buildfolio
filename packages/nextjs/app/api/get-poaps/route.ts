@@ -14,8 +14,6 @@ export async function GET(request: NextRequest) {
     });
 
     const data = response.data;
-    console.log("DATA", data);
-
     return NextResponse.json({ data }, { status: 200 });
   } catch (error) {
     // Log the error for server-side debugging

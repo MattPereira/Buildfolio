@@ -6,7 +6,7 @@ module.exports = {
   /*** "Achievements" section content */
   achievementNftsInfo: [
     {
-      title: "Patrick Collin's Foundry Course",
+      title: "Cyfrin Updraft Foundry Course",
       ownerWalletAddress: "0x41f727fA294E50400aC27317832A9F78659476B9",
       collectionContractAddress: ["0x39338138414Df90EC67dC2EE046ab78BcD4F56D9"],
     },
