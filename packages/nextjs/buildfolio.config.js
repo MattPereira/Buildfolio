@@ -60,7 +60,7 @@ module.exports = {
     {
       title: "Future",
       description:
-        "I plan to continue competing in hackathons and am very excited to attend my first ETH Denver this year! Additionally, I am helping to create Defi Challenges that help devs learn how to work with live protocols. Furthermore, I am starting to explore regenerative finance and learn about how protocols like gitcoin and mechanisms like quadratic funding help to facilatate the innovation and growth of public goods. My primary goal is to contribute towards building positive sum digital systems.",
+        "I plan to continue competing in hackathons and am very excited to attend my first ETH Denver this year! Additionally, I am helping the BuidlGuidl create Defi Challenges that help devs learn how to work with live protocols. Furthermore, I am starting to explore regenerative finance and learn about how protocols like gitcoin and mechanisms like quadratic funding help to facilatate the innovation and growth of public goods. My primary goal is to contribute towards building positive sum digital systems.",
     },
   ],
   /*** "Experience" section content ***/
