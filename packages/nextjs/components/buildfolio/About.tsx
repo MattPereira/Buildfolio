@@ -5,7 +5,7 @@ export function About() {
   return (
     <SectionContainer>
       <SectionHeader title="About" />
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 font-gothic text-xl">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-10 font-gothic text-xl">
         {aboutItems.map(item => (
           <div key={item.title} className="flex-1 mb-5">
             <h5 className="text-3xl font-inter font-bold mb-2">{item.title}</h5>

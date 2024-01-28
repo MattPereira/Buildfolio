@@ -7,7 +7,7 @@ export function Experience() {
     <SectionContainer bgcolor="">
       <SectionHeader title="Experience" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-10">
         {experienceItems.map((exp, idx) => (
           <div key={idx} className="flex-1 mb-5 border border-base-content rounded-xl bg-base-100 w-full">
             <div className="bg-white border-base-content border-b p-10 h-48 flex items-center justify-center rounded-xl overflow-hidden">

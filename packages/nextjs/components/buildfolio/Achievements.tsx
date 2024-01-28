@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import useSWR from "swr";
-import { achievementNftsInfo } from "~~/buildfolio.config";
+import { achievementNftsInfo, poapsWalletAddress } from "~~/buildfolio.config";
 import { SectionContainer, SectionHeader } from "~~/components/buildfolio/common";
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
@@ -11,8 +11,9 @@ export function Achievements() {
   return (
     <SectionContainer>
       <SectionHeader title="Achievements" />
+      <PoapsDataFetcher />
       {achievementNftsInfo.map((info, idx) => (
-        <CollectionDisplay
+        <GenericNftDataFetcher
           key={idx}
           title={info.title}
           ownerWalletAddress={info.ownerWalletAddress}
@@ -23,13 +24,33 @@ export function Achievements() {
   );
 }
 
-interface ICollectionDisplayProps {
+const PoapsDataFetcher = () => {
+  const fetchPoapsUrl = `/api/get-poaps?owner=${poapsWalletAddress}`;
+  const { data: poaps, error: poapsError, isLoading: poapsIsLoading } = useSWR(fetchPoapsUrl, fetcher);
+
+  console.log("poaps", poaps);
+
+  const nfts = poaps
+    ? poaps.data
+        .map((nft: any) => ({
+          tokenId: nft.tokenId,
+          image: nft.event.image_url,
+          description: nft.event.description,
+          name: nft.event.name,
+        }))
+        .filter((nft: any) => nft.tokenId !== "6983794") // filter out any POAPs you don't want to display
+    : [];
+
+  return <CollectionDisplay nfts={nfts} title="POAPs" isLoading={poapsIsLoading} error={poapsError} />;
+};
+
+interface IGenericNftFetcherProps {
   ownerWalletAddress: string;
   collectionContractAddress: string[];
   title: string;
 }
 
-const CollectionDisplay = ({ ownerWalletAddress, collectionContractAddress, title }: ICollectionDisplayProps) => {
+const GenericNftDataFetcher = ({ ownerWalletAddress, collectionContractAddress, title }: IGenericNftFetcherProps) => {
   const createQueryURL = (ownerWalletAddress: string, collectionContractAddresses: string[]) => {
     let baseURL = `/api/get-nfts?owner=${encodeURIComponent(ownerWalletAddress)}`;
     collectionContractAddresses.forEach((address: string) => {
@@ -39,10 +60,8 @@ const CollectionDisplay = ({ ownerWalletAddress, collectionContractAddress, titl
   };
 
   const queryURL = createQueryURL(ownerWalletAddress, collectionContractAddress);
-  console.log("queryURL", queryURL);
 
   const { data, error, isLoading } = useSWR(queryURL, fetcher);
-  console.log("nftData", data);
 
   // Process the data only if it's available
   const nfts = data
@@ -53,12 +72,26 @@ const CollectionDisplay = ({ ownerWalletAddress, collectionContractAddress, titl
       }))
     : [];
 
+  return <CollectionDisplay nfts={nfts} title={title} isLoading={isLoading} error={error} />;
+};
+
+const CollectionDisplay = ({
+  nfts,
+  title,
+  isLoading,
+  error,
+}: {
+  nfts: any;
+  title: string;
+  isLoading: boolean;
+  error: any;
+}) => {
   return (
     <div className="mb-10">
       <h2 className="text-4xl font-cubano mb-5">{title}</h2>
       {isLoading || error ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-          {Array.from(Array(10).keys()).map((_, idx) => (
+          {Array.from(Array(4).keys()).map((_, idx) => (
             <div key={idx} className="skeleton animate-pulse bg-base-100 rounded-xl w-full h-72"></div>
           ))}
         </div>
@@ -67,10 +100,10 @@ const CollectionDisplay = ({ ownerWalletAddress, collectionContractAddress, titl
           {nfts.map((nft: any, idx: number) => (
             <div
               key={idx}
-              className="flex flex-col items-center justify-center border border-base-content rounded-xl p-3 bg-base-200 overflow-hidden"
+              className="flex flex-col items-center justify-center border border-base-content rounded-xl p-3 bg-base-200 overflow-hidden cursor-pointer group hover:bg-primary hover:text-primary-content"
             >
-              <Image width={500} height={500} src={nft.image} alt={nft.name} className="w-48 h-48" />
-              <p className="text-xl whitespace-nowrap overflow-hidden">{nft.name}</p>
+              <Image width={500} height={500} src={nft.image} alt={nft.name} className="w-48 h-48 group-hover:hidden" />
+              <p className="text-xl hidden group-hover:block">{nft.name}</p>
             </div>
           ))}
         </div>
