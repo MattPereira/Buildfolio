@@ -55,7 +55,7 @@ module.exports = {
     {
       title: "Present",
       description:
-        "I am a proud member of the Buidl Guidl community where we create products, prototypes, and tutorials to enrich the web3 ecosystem. My first creation was Speedrun Chainlink, a beginner's guide to implimenting Chainlink products with smart contracts. Next, I shipped Vaults of Fortune, a contest where players compete for the highest ROI by depositing ERC-20 tokens into ERC-4626 vaults. After that, I shipped Only Buidlors, a dynamic SVG NFT project that uses Chainlink functions to verify membership",
+        "I am a committed member of the Buidl Guidl community where we create products, prototypes, and tutorials to enrich the web3 ecosystem. My first creation was Speedrun Chainlink, a beginner's guide to implimenting Chainlink products with smart contracts. Next, I shipped Vaults of Fortune, a contest where players compete for the highest ROI by depositing ERC-20 tokens into ERC-4626 vaults. After that, I shipped Only Buidlors, a dynamic SVG NFT project that uses Chainlink functions to verify membership",
     },
     {
       title: "Future",
