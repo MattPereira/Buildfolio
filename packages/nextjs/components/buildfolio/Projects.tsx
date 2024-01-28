@@ -100,7 +100,7 @@ function ProjectCard({ project }: { project: IProject }) {
             href={project.urls.demo}
             target="_blank"
             rel="noreferrer"
-            className={`btn btn-accent btn-outline w-full text-xl font-gothic font-bold capitalize rounded-lg`}
+            className={`btn btn-accent w-full text-xl font-gothic font-bold capitalize rounded-lg`}
           >
             Demo
           </a>
@@ -108,7 +108,7 @@ function ProjectCard({ project }: { project: IProject }) {
             href={project.urls.code}
             target="_blank"
             rel="noreferrer"
-            className={`btn btn-primary btn-outline w-full text-xl font-inter font-bold capitalize rounded-lg`}
+            className={`btn btn-primary w-full text-xl font-gothic font-bold capitalize rounded-lg`}
           >
             Code
           </a>
