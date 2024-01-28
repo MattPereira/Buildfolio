@@ -86,7 +86,7 @@ const CollectionDisplay = ({
 }) => {
   return (
     <div className="mb-10">
-      <h2 className="text-4xl font-cubano mb-5">{title}</h2>
+      <h2 className="text-4xl font-gothic font-bold mb-5">{title}</h2>
       {isLoading || error ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
           {Array.from(Array(4).keys()).map((_, idx) => (

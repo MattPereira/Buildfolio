@@ -61,7 +61,7 @@ export function Projects() {
     <SectionContainer>
       <SectionHeader title="Projects" />
 
-      <h5 className="font-cubano text-4xl mb-5">Decentralized</h5>
+      <h5 className="font-gothic font-bold text-4xl mb-5">Decentralized</h5>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 mb-10">
         {profileDataIsLoading || profileError
@@ -69,7 +69,7 @@ export function Projects() {
           : builds.map(project => <ProjectCard key={project.title} project={project} />)}
       </div>
 
-      <h5 className="font-cubano text-4xl mb-5">Centralized</h5>
+      <h5 className="font-gothic font-bold text-4xl mb-5">Centralized</h5>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10">
         {web2ProjectsData.map(project => (
@@ -90,7 +90,7 @@ function ProjectCard({ project }: { project: IProject }) {
       </div>
 
       <div className="grow flex flex-col p-5 ">
-        <h5 className="text-2xl font-inter font-bold">{project.title}</h5>
+        <h5 className="text-2xl font-gothic font-bold">{project.title}</h5>
 
         <div className="grow">
           <p className="font-gothic text-xl">{project.description}</p>
@@ -100,7 +100,7 @@ function ProjectCard({ project }: { project: IProject }) {
             href={project.urls.demo}
             target="_blank"
             rel="noreferrer"
-            className={`btn btn-accent btn-outline w-full text-xl font-inter font-bold capitalize rounded-lg`}
+            className={`btn btn-accent btn-outline w-full text-xl font-gothic font-bold capitalize rounded-lg`}
           >
             Demo
           </a>

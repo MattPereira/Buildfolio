@@ -20,7 +20,7 @@ export function Experience() {
               />
             </div>
             <div className="p-5">
-              <h5 className="text-2xl font-inter font-bold mb-2">{exp.title}</h5>
+              <h5 className="text-2xl font-gothic font-bold mb-2">{exp.title}</h5>
               <p className="text-xl">{exp.description}</p>
             </div>
           </div>

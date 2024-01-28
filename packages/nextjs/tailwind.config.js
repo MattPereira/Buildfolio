@@ -76,16 +76,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["didact gothic", "sans-serif"], // default if no font explicitly specified
+        sans: ["didact gothic", "sans-serif"], // changes default font to didact gothic
         cubano: ["cubano", "sans-serif"],
         gothic: ["didact gothic", "sans-serif"],
         inter: ["inter", "sans-serif"],
       },
-      // Transparency colors only good for dark mode
-      // colors: {
-      //   "base-100": "#FFFFFF0A",
-      //   "base-200": "#FFFFFF0F",
-      // },
       boxShadow: {
         center: "0 0 12px -2px rgb(0 0 0 / 0.05)",
       },
