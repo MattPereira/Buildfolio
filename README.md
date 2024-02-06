@@ -8,11 +8,13 @@ See the example demo at https://matt-pereira.vercel.app/
 
 ## Features
 
-All content on the page is controlled by the `packages/nextjs/buildfolio.config.js` file
+All content on the page is controlled by the `packages/nextjs/buildfolio.config.ts` file
 
 ### Landing
 
 - `ensName` is used to fetch ens records that are used for content of the `Landing` component
+  - You must set ens records for social links, avatar, and "title" for full display (see `nextjs/hooks/buildfolio/useFetchEnsRecords.ts)
+- `resumeUrl` used for link in the header component
 
 ### About
 
@@ -21,7 +23,7 @@ All content on the page is controlled by the `packages/nextjs/buildfolio.config.
 ### Projects
 
 - `buidlGuidlWalletAddress` is used to fetch data for your builds published on the BuidlGuidl app
-- `web2ProjectsData` is used to display any other projects you want
+- `projectItems` is used to display any other projects you want
 
 ### Experience
 
@@ -29,7 +31,8 @@ All content on the page is controlled by the `packages/nextjs/buildfolio.config.
 
 ### Acheivements
 
-- `achievementNftsInfo` is used to fetch all NFTs for a given NFT collection address and owner wallet address using the Alchemy NFT API
+- `achievementItems` is used to fetch all NFTs for a given NFT collection address and owner wallet address using the Alchemy NFT API
+- `poapsWalletAddrss` is used to fetch POAPs for owned by a given wallet from the POAP API. You will need to request POAP API key from the protocol
 
 ## Getting Started
 
@@ -54,8 +57,9 @@ yarn vercel
 ```
 
 6. Set environment variables on vercel
-   1. Set the `NEXT_PUBLIC_VERCEL_URL` key to a value that looks like `matt-pereira.vercel.app`
-   2. Set the `ALCHEMY_API_KEY` key to your alchemy api key
+   1. Set the `NEXT_PUBLIC_VERCEL_URL` to a value that looks like `matt-pereira.vercel.app`
+   2. Set the `ALCHEMY_API_KEY` to your alchemy api key
+   3. Set the `POAP_API_KEY` to the POAP api key you got from the protocol
 
 ## Technology Stack
 
