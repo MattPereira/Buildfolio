@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import Image from "next/image";
-import { allowedImageDomains } from "~~/buildfolio.config";
 
 interface SmartImageProps {
   src: string;
@@ -12,12 +11,17 @@ interface SmartImageProps {
 /**
  * Component to render images using next Image if the src is from an allowed domain
  * because will cause failure to build if you pass in src that is not from an allowed domain
+ *
+ * @dev make sure allowedDomains matches next.config.js image.domains configuration
  */
+
+const allowedDomains = ["ipfs.io", "assets.poap.xyz", "storage.googleapis.com", "prod-metadata.s3.amazonaws.com"];
+
 export const SmartImage = ({ src, alt, width, height }: SmartImageProps) => {
   const useNextImage = useMemo(() => {
     try {
       const url = new URL(src);
-      return allowedImageDomains.includes(url.hostname);
+      return allowedDomains.includes(url.hostname);
     } catch (error) {
       return false;
     }

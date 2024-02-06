@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import useSWR from "swr";
-import { buidlGuidlWalletAddress, web2ProjectsData } from "~~/buildfolio.config";
+import { buidlGuidlWalletAddress, projectItems } from "~~/buildfolio.config";
 import { SectionContainer, SectionHeader } from "~~/components/buildfolio/common";
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
@@ -72,7 +72,7 @@ export function Projects() {
       <h5 className="font-gothic font-bold text-4xl mb-5">Centralized</h5>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10">
-        {web2ProjectsData.map(project => (
+        {projectItems.map(project => (
           <ProjectCard key={project.title} project={project} />
         ))}
       </div>

@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { allowedImageDomains } = require("./buildfolio.config");
 
 // @ts-check
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: allowedImageDomains,
+    domains: ["ipfs.io", "assets.poap.xyz", "storage.googleapis.com", "prod-metadata.s3.amazonaws.com"],
   },
   reactStrictMode: true,
   typescript: {

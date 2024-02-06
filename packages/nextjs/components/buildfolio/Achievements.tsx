@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import useSWR from "swr";
-import { achievementNftsInfo, poapsWalletAddress } from "~~/buildfolio.config";
+import { achievementItems, poapsWalletAddress } from "~~/buildfolio.config";
 import { SectionContainer, SectionHeader } from "~~/components/buildfolio/common";
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
@@ -12,7 +12,7 @@ export function Achievements() {
     <SectionContainer>
       <SectionHeader title="Achievements" />
       <PoapsDataFetcher />
-      {achievementNftsInfo.map((info, idx) => (
+      {achievementItems.map((info, idx) => (
         <GenericNftDataFetcher
           key={idx}
           title={info.title}
