@@ -64,5 +64,11 @@ yarn vercel
 ## Technology Stack
 
 - Scaffold ETH-2
-- Alchemy NFT API
+  - nextjs
+  - viem
+  - wagmie
+  - tailwind
+  - hardhat
 - ENSjs
+- Alchemy NFT API
+- POAP API
