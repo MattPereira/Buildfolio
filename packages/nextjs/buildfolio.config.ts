@@ -26,7 +26,7 @@ export interface AchievementInfo {
 }
 
 ////////// LANDING //////////
-const ensName = "quizford.eth"; // ENS records fetched for the landing showcase component
+const ensName = "matthu.eth"; // ENS records fetched for the landing showcase component
 const resumeUrl = "https://docs.google.com/document/d/1H-5nsbQjDQPvQYtGq6Y91_NAwTxjicJEVXbtxtorsKI/edit?usp=sharing"; // for link in the header component
 
 ////////// ABOUT //////////
