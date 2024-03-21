@@ -99,8 +99,8 @@ export const Address = ({ address, disableAddressLink, format, size = "base" }: 
         <a
           className={`ml-1.5 text-${size} font-normal`}
           target="_blank"
-          href={blockExplorerAddressLink}
           rel="noopener noreferrer"
+          href={blockExplorerAddressLink}
         >
           {displayAddress}
         </a>

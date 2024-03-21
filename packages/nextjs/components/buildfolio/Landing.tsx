@@ -11,8 +11,11 @@ import { useGlobalState } from "~~/services/store/store";
 export function Landing() {
   const ensRecords = useGlobalState(state => state.ensRecords);
 
+  console.log("ensRecords", ensRecords);
+
   return (
     <section id="landing" className="py-36 xl:py-60">
+      <div className="text-center"></div>
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
         {Object.keys(ensRecords).length === 0 ? (
           <>
@@ -22,10 +25,26 @@ export function Landing() {
         ) : (
           <>
             <div>{ensRecords?.avatar && <ProfilePicture ensAvatarRecord={ensRecords.avatar} />}</div>
+
             <div>
-              <h1 className="text-4xl md:text-6xl xl:text-8xl py-4 px-6 rounded-2xl font-cubano text-base-300 bg-base-content mb-3">
+              <div className="text-center lg:text-start">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={`https://app.ens.domains/${ensName}`}
+                  className="text-center md:text-start"
+                >
+                  <span className="font-bold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500 mb-0">
+                    {ensName}
+                  </span>
+                  <div className="text-md sm:text-lg xl:text-3xl mb-3">{ensRecords?.ethAddress?.value}</div>
+                </a>
+              </div>
+
+              <h1 className="text-5xl md:text-6xl xl:text-8xl py-4 px-6 rounded-2xl font-cubano text-base-300 bg-base-content mb-3 text-center">
                 {ensRecords?.name || ensName}
               </h1>
+
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-cubano mb-3 text-center lg:text-start text-base-content">
                 {ensRecords?.title || "Software Engineer"}
               </h2>
