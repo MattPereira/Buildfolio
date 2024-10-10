@@ -22,7 +22,7 @@ export function Landing() {
                 href={`https://app.ens.domains/matthu.eth`}
                 className="text-center md:text-start mb-3"
               >
-                <span className="font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-violet-500 to-orange-500 mb-0">
+                <span className="font-cubano text-transparent text-4xl md:text-5xl  bg-clip-text bg-gradient-to-r from-violet-500 to-orange-500 mb-0">
                   matthu.eth
                 </span>
               </a>
@@ -32,9 +32,12 @@ export function Landing() {
               Matt Pereira
             </h1>
 
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-cubano mb-3 text-center lg:text-start text-base-content">
-              Full Stack Developer
-            </h2>
+            <div className="flex justify-center lg:justify-start">
+              <h2 className="text-4xl md:text-4xl xl:text-5xl font-cubano mb-3 text-center lg:text-start  text-transparent  bg-clip-text bg-gradient-to-r from-violet-500 to-orange-500">
+                Software Engineer
+              </h2>
+            </div>
+
             <div className="flex justify-center lg:justify-start">
               <SocialLinks isButtonStyle={true} />
             </div>

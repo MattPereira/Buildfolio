@@ -82,7 +82,7 @@ const experienceItems: ExperienceInfo[] = [
       "Full stack software engineer for the Balancer labs integrations team. Working on the software development kit, prototyping tools, educational content, and a pool creation front-end",
   },
   {
-    title: "On Chain Developer",
+    title: "Full Stack Developer",
     image: "/buidlguidl.svg",
     description:
       "Building decentralized applications with Scaffold ETH including Speedrun Chainlink, Vaults of Fortune, and upDev. Currently, a member of the Sanctum Cohort stream working on building Defi Challenges teach developers how to integrate with protocols including Sommolier, Yearn, and Chainlink",

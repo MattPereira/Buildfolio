@@ -12,9 +12,8 @@ type HeaderMenuLink = {
 };
 
 export const menuLinks: HeaderMenuLink[] = [
-  { label: "About", href: "/#About" },
-  { label: "Projects", href: "/#Projects" },
   { label: "Experience", href: "/#Experience" },
+  { label: "Projects", href: "/#Projects" },
   { label: "Achievements", href: "/#Achievements" },
   {
     label: "Resume",
