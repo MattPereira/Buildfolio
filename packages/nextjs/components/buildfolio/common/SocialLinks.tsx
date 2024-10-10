@@ -2,32 +2,29 @@ import GithubIcon from "~~/public/socials/github.svg";
 // import LinkedInIcon from "~~/public/socials/linkedin.svg";
 import TelegramIcon from "~~/public/socials/telegram.svg";
 import TwitterIcon from "~~/public/socials/twitter.svg";
-import { useGlobalState } from "~~/services/store/store";
 
 interface ISocialLinksProps {
   isButtonStyle?: boolean;
 }
 
 export const SocialLinks = ({ isButtonStyle }: ISocialLinksProps) => {
-  const ensRecords = useGlobalState(state => state.ensRecords);
-
   const classNames = `w-14 h-14 inline-block p-2 mr-3 ${
     isButtonStyle ? "rounded-full text-base-300 bg-primary hover:bg-accent" : ""
   }  "`;
 
   const socialsArray = [
-    ensRecords?.twitterUsername && {
-      url: `https://twitter.com/${ensRecords.twitterUsername}`,
+    {
+      url: `https://twitter.com/__mattpereira__`,
       icon: <TwitterIcon alt="Twitter icon" />,
       id: "twitter",
     },
-    ensRecords?.githubUsername && {
-      url: `https://github.com/${ensRecords.githubUsername}`,
+    {
+      url: `https://github.com/mattpereira`,
       icon: <GithubIcon alt="GitHub icon" />,
       id: "github",
     },
-    ensRecords?.telegramUsername && {
-      url: `https://t.me/${ensRecords.telegramUsername}`,
+    {
+      url: `https://t.me/mattpereira`,
       icon: <TelegramIcon alt="Telegram icon" />,
       id: "telegram",
     },
