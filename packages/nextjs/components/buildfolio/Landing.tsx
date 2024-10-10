@@ -22,18 +22,18 @@ export function Landing() {
                 href={`https://app.ens.domains/matthu.eth`}
                 className="text-center md:text-start mb-3"
               >
-                <span className="font-cubano text-transparent text-4xl md:text-5xl  bg-clip-text bg-gradient-to-r from-violet-500 to-orange-500 mb-0">
+                <span className="font-cubano text-transparent text-4xl md:text-5xl bg-clip-text bg-gradient-to-r from-violet-500 to-orange-500 mb-0">
                   matthu.eth
                 </span>
               </a>
             </div>
 
-            <h1 className="text-5xl md:text-6xl xl:text-8xl py-4 px-6 rounded-2xl font-cubano text-base-300 bg-base-content mb-3 text-center">
+            <h1 className="text-5xl md:text-6xl xl:text-8xl py-4 px-6 rounded-2xl font-cubano text-base-300  bg-gradient-to-r from-violet-500 to-orange-500 mb-3 text-center">
               Matt Pereira
             </h1>
 
             <div className="flex justify-center lg:justify-start">
-              <h2 className="text-4xl md:text-4xl xl:text-5xl font-cubano mb-3 text-center lg:text-start  text-transparent  bg-clip-text bg-gradient-to-r from-violet-500 to-orange-500">
+              <h2 className="text-4xl md:text-4xl xl:text-5xl font-cubano mb-3 text-center lg:text-start ">
                 Software Engineer
               </h2>
             </div>
