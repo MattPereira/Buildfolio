@@ -76,22 +76,22 @@ const projectItems: ProjectInfo[] = [
 ////////// EXPERIENCE //////////
 const experienceItems: ExperienceInfo[] = [
   {
+    title: "Software Engineer",
+    image: "/balancer.svg",
+    description:
+      "Full stack software engineer for the Balancer labs integrations team. Working on the software development kit, prototyping tools, educational content, and a pool creation front-end",
+  },
+  {
     title: "On Chain Developer",
     image: "/buidlguidl.svg",
     description:
       "Building decentralized applications with Scaffold ETH including Speedrun Chainlink, Vaults of Fortune, and upDev. Currently, a member of the Sanctum Cohort stream working on building Defi Challenges teach developers how to integrate with protocols including Sommolier, Yearn, and Chainlink",
   },
   {
-    title: "Full Stack Web Developer",
+    title: "Web Developer",
     image: "/hfla.png",
     description:
       "Volunteered as a software engineer contributing to open source projects including Civic Tech Jobs and the Volunteer Relationship Management System. Collaborated with other developers, designers, and project managers to serve the greater Los Angeles community",
-  },
-  {
-    title: "Peer Mentor",
-    image: "/springboard.png",
-    description:
-      "After earning a full stack software engineering bootcamp certification from Springboard, I volunteered as a peer mentor helping students overcome obstacles and learn the fundamentals of web development. Additionally, I helped facilitate technical interview practice sessions",
   },
 ];
 

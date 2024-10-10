@@ -48,7 +48,7 @@ export function Projects() {
               },
             };
           });
-          setBuilds(formattedBuildsData);
+          setBuilds(formattedBuildsData.reverse());
         })
         .catch(err => console.log(err));
     }
