@@ -79,7 +79,7 @@ const experienceItems: ExperienceInfo[] = [
     title: "Software Engineer",
     image: "/balancer.svg",
     description:
-      "Full stack software engineer for the Balancer labs integrations team. Working on the software development kit, prototyping tools, educational content, and a pool creation front-end",
+      "Full stack software engineer for the Balancer labs integrations team. Creating educational content including documentation, video tutorials, an prototyping tools. Building user interfaces for liquidity pool creation. Adding features to the Balancer software development kit",
   },
   {
     title: "Full Stack Developer",
