@@ -84,7 +84,7 @@ function ProjectCard({ project }: { project: IProject }) {
   return (
     <div key={project.title} className="border border-base-content rounded-xl flex flex-col bg-base-200">
       <div className="">
-        <div className="w-full h-60 lg:h-64 overflow-hidden rounded-xl border-base-content border-b">
+        <div className="w-full h-40md:h-60 lg:h-64 overflow-hidden rounded-xl border-base-content border-b">
           <Image width={2000} height={1000} src={project.imageSrc} alt={project.title} priority={true} />
         </div>
       </div>
