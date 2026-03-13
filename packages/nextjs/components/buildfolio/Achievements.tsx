@@ -30,7 +30,7 @@ const PoapsDataFetcher = () => {
 
   const nfts = poaps
     ? poaps.data
-        .map((nft: any) => ({
+        ?.map((nft: any) => ({
           tokenId: nft.tokenId,
           image: nft.event.image_url,
           description: nft.event.description,
@@ -63,7 +63,7 @@ const GenericNftDataFetcher = ({ ownerWalletAddress, collectionContractAddress, 
 
   // Process the data only if it's available
   const nfts = data
-    ? data.nfts.map((nft: any) => ({
+    ? data?.nfts?.map((nft: any) => ({
         image: nft.image?.originalUrl,
         description: nft.description,
         name: nft.raw.metadata.attributes[0].trait_type,
@@ -95,7 +95,7 @@ const CollectionDisplay = ({
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 rounded-xl">
-          {nfts.map((nft: any, idx: number) => (
+          {nfts?.map((nft: any, idx: number) => (
             <div
               key={idx}
               className="flex flex-col items-center justify-center border border-base-content rounded-xl p-3 bg-base-200 overflow-hidden cursor-pointer group hover:bg-primary hover:text-primary-content"
