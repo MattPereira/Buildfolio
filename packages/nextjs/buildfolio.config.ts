@@ -27,7 +27,7 @@ export interface AchievementInfo {
 
 ////////// LANDING //////////
 const ensName = "matthu.eth"; // ENS records fetched for the landing showcase component
-const resumeUrl = "https://docs.google.com/document/d/1H-5nsbQjDQPvQYtGq6Y91_NAwTxjicJEVXbtxtorsKI/edit?usp=sharing"; // for link in the header component
+const resumeUrl = "https://docs.google.com/document/d/1GAvP7iTx6E8Cr7cIe9kg5amQnEYF6r8WjV8-FUUTBrk/edit?usp=sharing"; // for link in the header component
 
 ////////// ABOUT //////////
 const aboutItems: AboutInfo[] = [
