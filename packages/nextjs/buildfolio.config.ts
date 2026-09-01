@@ -1,13 +1,3 @@
-export interface ProjectInfo {
-  title: string;
-  imageSrc: string;
-  description: string;
-  urls: {
-    demo: string;
-    code: string;
-  };
-}
-
 export interface ExperienceInfo {
   title: string;
   image: string;
@@ -25,28 +15,6 @@ const resumeUrl = "https://docs.google.com/document/d/1GAvP7iTx6E8Cr7cIe9kg5amQn
 
 ////////// PROJECTS //////////
 const buidlGuidlWalletAddress = "0x41f727fA294E50400aC27317832A9F78659476B9"; // used to fetch projects from BG server
-const projectItems: ProjectInfo[] = [
-  {
-    title: "Contra Costa Golf Club",
-    imageSrc: "/ccgc.png",
-    description:
-      "A full stack web application that manages all of the tournaments, greenies, members, courses, and standings data for the contra costa golf club. Users are able to input their strokes, putts, and greenies as they play each round. Handicaps and points are automatically calculated to determine individual tournament and season long champions.",
-    urls: {
-      demo: "https://ccgc.vercel.app/",
-      code: "https://github.com/MattPereira/contra-costa-golf-club",
-    },
-  },
-  {
-    title: "Tabernacle School",
-    description:
-      "A single page web application for Tabernacle School that advertises to prospective families and provides current families with requisite documents, calendars, and instructions. Features include forms that allow users to send emails to the school, a FullCalender that fetches data from the school’s google calendar, and a headless CMS for updating the data and photos displayed on the website.",
-    imageSrc: "/tabernacle.png",
-    urls: {
-      demo: "https://tabernacle.school",
-      code: "https://github.com/MattPereira/tabernacle-school",
-    },
-  },
-];
 
 ////////// EXPERIENCE //////////
 const experienceItems: ExperienceInfo[] = [
@@ -70,6 +38,10 @@ const experienceItems: ExperienceInfo[] = [
   },
 ];
 
+////////// VIDEOS //////////
+// Videos are parsed out of the "Videos" section of this README so it stays the single source of truth
+const githubReadmeUrl = "https://raw.githubusercontent.com/MattPereira/MattPereira/main/README.md";
+
 ////////// ACHEIVEMENTS //////////
 const achievementItems: AchievementInfo[] = [
   {
@@ -89,4 +61,4 @@ const achievementItems: AchievementInfo[] = [
 ];
 const poapsWalletAddress = "0x41f727fA294E50400aC27317832A9F78659476B9";
 
-export { resumeUrl, achievementItems, poapsWalletAddress, buidlGuidlWalletAddress, projectItems, experienceItems };
+export { resumeUrl, achievementItems, poapsWalletAddress, buidlGuidlWalletAddress, experienceItems, githubReadmeUrl };

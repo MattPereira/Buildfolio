@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
-import { Achievements, Experience, Landing, Projects } from "~~/components/buildfolio/";
+import { Achievements, Experience, Landing, Projects, Videos } from "~~/components/buildfolio/";
 
 const Home: NextPage = () => {
   return (
     <>
       <Landing />
       <Experience />
+      <Videos />
       <Projects />
       <Achievements />
     </>
