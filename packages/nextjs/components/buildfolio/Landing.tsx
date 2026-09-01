@@ -28,7 +28,7 @@ export function Landing() {
               </a>
             </div> */}
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-8xl py-4 px-6 rounded-2xl font-cubano text-base-300 bg-gradient-to-r from-violet-600 to-orange-600 mb-3 text-center">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-8xl py-4 px-6 rounded-2xl font-cubano text-primary-content bg-primary mb-3 text-center">
               Matt Pereira
             </h1>
 
