@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useIsMounted } from "usehooks-ts";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
-import { useDarkMode } from "~~/hooks/scaffold-eth/useDarkMode";
+import { useDarkMode } from "~~/hooks/useDarkMode";
 
 export const SwitchTheme = ({ className }: { className?: string }) => {
   const { isDarkMode, toggle } = useDarkMode();
