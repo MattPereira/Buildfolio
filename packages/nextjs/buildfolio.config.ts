@@ -1,8 +1,3 @@
-export interface AboutInfo {
-  title: string;
-  description: string;
-}
-
 export interface ProjectInfo {
   title: string;
   imageSrc: string;
@@ -27,25 +22,6 @@ export interface AchievementInfo {
 
 ////////// LANDING //////////
 const resumeUrl = "https://docs.google.com/document/d/1GAvP7iTx6E8Cr7cIe9kg5amQnEYF6r8WjV8-FUUTBrk/edit?usp=sharing"; // for link in the header component
-
-////////// ABOUT //////////
-const aboutItems: AboutInfo[] = [
-  {
-    title: "Past",
-    description:
-      "My journey as a programmer started with a full stack software engineering bootcamp organized by Springboard. After graduating, I stuck around as a peer mentor helping students learn the fundamentals of web development. I also joined Hack for LA as a volunteer software engineer contributing to open source projects including Civic Tech Jobs, where I learned to collaborate with other developers, designers, and project managers. I also built the Tabernacle School and Contra Costa Golf Club websites",
-  },
-  {
-    title: "Present",
-    description:
-      "I am a committed member of the Buidl Guidl community where we create products, prototypes, and tutorials to enrich the web3 ecosystem. My first creation was Speedrun Chainlink, a beginner's guide to implimenting Chainlink products with smart contracts. Next, I shipped Vaults of Fortune, a contest where players compete for the highest ROI by depositing ERC-20 tokens into ERC-4626 vaults. After that, I shipped Only Buidlors, a dynamic SVG NFT project that uses Chainlink functions to verify membership",
-  },
-  {
-    title: "Future",
-    description:
-      "I plan to continue competing in hackathons and am very excited to attend my first ETH Denver this year! Additionally, I am helping the BuidlGuidl create Defi Challenges that help devs learn how to work with live protocols. Furthermore, I am starting to explore regenerative finance and learn about how protocols like gitcoin and mechanisms like quadratic funding help to facilatate the innovation and growth of public goods. My primary goal is to contribute towards building positive sum digital systems.",
-  },
-];
 
 ////////// PROJECTS //////////
 const buidlGuidlWalletAddress = "0x41f727fA294E50400aC27317832A9F78659476B9"; // used to fetch projects from BG server
@@ -113,12 +89,4 @@ const achievementItems: AchievementInfo[] = [
 ];
 const poapsWalletAddress = "0x41f727fA294E50400aC27317832A9F78659476B9";
 
-export {
-  resumeUrl,
-  achievementItems,
-  poapsWalletAddress,
-  buidlGuidlWalletAddress,
-  projectItems,
-  aboutItems,
-  experienceItems,
-};
+export { resumeUrl, achievementItems, poapsWalletAddress, buidlGuidlWalletAddress, projectItems, experienceItems };
