@@ -26,7 +26,6 @@ export interface AchievementInfo {
 }
 
 ////////// LANDING //////////
-const ensName = "matthu.eth"; // ENS records fetched for the landing showcase component
 const resumeUrl = "https://docs.google.com/document/d/1GAvP7iTx6E8Cr7cIe9kg5amQnEYF6r8WjV8-FUUTBrk/edit?usp=sharing"; // for link in the header component
 
 ////////// ABOUT //////////
@@ -115,7 +114,6 @@ const achievementItems: AchievementInfo[] = [
 const poapsWalletAddress = "0x41f727fA294E50400aC27317832A9F78659476B9";
 
 export {
-  ensName,
   resumeUrl,
   achievementItems,
   poapsWalletAddress,

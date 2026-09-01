@@ -14,7 +14,7 @@ export const SocialLinks = ({ isButtonStyle }: ISocialLinksProps) => {
 
   const socialsArray = [
     {
-      url: `https://twitter.com/__mattpereira__`,
+      url: `https://twitter.com/ghostinthemiata`,
       icon: <TwitterIcon alt="Twitter icon" />,
       id: "twitter",
     },
@@ -28,7 +28,7 @@ export const SocialLinks = ({ isButtonStyle }: ISocialLinksProps) => {
       icon: <TelegramIcon alt="Telegram icon" />,
       id: "telegram",
     },
-  ].filter(Boolean); // This removes any falsy entries from the array, such as those where the username is undefined
+  ];
 
   return (
     <>
