@@ -11,7 +11,6 @@ interface IVideo {
 interface IPlaylist {
   title: string;
   url: string;
-  description: string;
   videos: IVideo[];
 }
 
@@ -29,9 +28,6 @@ export async function Videos() {
 
       {playlists.map(playlist => (
         <div key={playlist.url} className="mb-10 last:mb-0">
-          <h5 className="font-gothic font-bold text-4xl mb-2">{playlist.title}</h5>
-          <p className="font-gothic text-xl mb-5">{playlist.description}</p>
-
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-10">
             {playlist.videos.map(video => (
               <a
@@ -39,18 +35,15 @@ export async function Videos() {
                 href={video.url}
                 target="_blank"
                 rel="noreferrer"
-                className="border border-base-content rounded-xl flex flex-col bg-base-200 overflow-hidden"
+                className="border border-base-content rounded-xl overflow-hidden"
               >
                 <Image
                   width={1280}
                   height={720}
                   src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`}
                   alt={video.title}
-                  className="w-full h-auto border-base-content border-b"
+                  className="w-full h-auto"
                 />
-                <div className="p-5">
-                  <h6 className="text-2xl font-gothic font-bold">{video.title}</h6>
-                </div>
               </a>
             ))}
           </div>
@@ -76,7 +69,7 @@ async function fetchVideoPlaylists(): Promise<IPlaylist[]> {
  *
  * @dev expects each playlist to be a markdown list item followed by a table of
  * anchor tags wrapping youtube thumbnails, i.e.
- * - [Playlist Title](playlist url) – playlist description
+ * - [Playlist Title](playlist url)
  * | <a href="...watch?v=VIDEO_ID..."><img src="..." alt="Video Title"></a> | ...
  */
 export function parseVideosSection(markdown: string): IPlaylist[] {
@@ -88,8 +81,8 @@ export function parseVideosSection(markdown: string): IPlaylist[] {
   for (const line of section.split("\n")) {
     const playlistMatch = line.match(/^-\s*\[([^\]]+)\]\(([^)]+)\)\s*[–-]?\s*(.*)$/);
     if (playlistMatch) {
-      const [, title, url, description] = playlistMatch;
-      playlists.push({ title, url, description, videos: [] });
+      const [, title, url] = playlistMatch;
+      playlists.push({ title, url, videos: [] });
       continue;
     }
 
